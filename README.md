@@ -6,4 +6,4 @@ Minecraft Bedrock Servers
 |------------|-------|
 | mc.opcc.tk | 19132 |
 
-[Server Console](https://ssh.opcc.tk)
+[Server Console](https://srv4.opcc.tk)
