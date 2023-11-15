@@ -1,4 +1,0 @@
-Sitemap: https://opcc.tk/sitemap.txt
-
-User-agent: *
-Disallow:
