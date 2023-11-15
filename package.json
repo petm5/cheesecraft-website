@@ -19,5 +19,8 @@
   "homepage": "https://github.com/peter-marshall5/operation-cheesecake#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.2"
   }
 }

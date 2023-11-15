@@ -1,7 +1,5 @@
 ---
-name: Operation Cheesecake
 date: git Last Modified
-copyright: Peter Marshall
 ---
 
 <!doctype html>
@@ -10,12 +8,12 @@ copyright: Peter Marshall
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ description }}">
-    <link rel="stylesheet" href="/style.css">
-    <title>{% if title %}{{ title }} - {% endif %}{{ name }}</title>
+    <link rel="stylesheet" href="/main.css">
+    <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
   </head>
   <body>
     <header>
-      <h1>{{ name }}</h1>
+      <h1>{{ site.title }}</h1>
     </header>
     <main>
       <article>
@@ -23,7 +21,7 @@ copyright: Peter Marshall
       </article>
     </main>
     <footer>
-      <p>© {{ copyright }} {{ page.date.getUTCFullYear() }}</p>
+      <p>© {{ site.copyright }} {{ page.date.getUTCFullYear() }}</p>
     </footer>
   </body>
 </html>
