@@ -1,4 +1,5 @@
 ---
+layout: default
 description: Operation Cheesecake is a collection of self-hosted services.
 ---
 

@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Minecraft Servers
 description: A list of Minecraft Bedrock servers.
 ---
