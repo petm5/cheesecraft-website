@@ -1,0 +1,29 @@
+---
+name: Operation Cheesecake
+date: git Last Modified
+copyright: Peter Marshall
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ description }}">
+    <link rel="stylesheet" href="/style.css">
+    <title>{% if title %}{{ title }} - {% endif %}{{ name }}</title>
+  </head>
+  <body>
+    <header>
+      <h1>{{ name }}</h1>
+    </header>
+    <main>
+      <article>
+        {{ content | safe }}
+      </article>
+    </main>
+    <footer>
+      <p>© {{ copyright }} {{ page.date.getUTCFullYear() }}</p>
+    </footer>
+  </body>
+</html>
