@@ -14,7 +14,7 @@ body {
 }
 
 body > * {
-  --layout-spacing: max(8vh, 3rem);
+  --layout-spacing: max(9vh, 4rem);
   --max-width: 70ch;
   width: min(100%, var(--max-width));
   margin-left: auto;
