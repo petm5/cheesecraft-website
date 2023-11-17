@@ -32,6 +32,7 @@ header {
   user-select: none;
   overflow: hidden;
   text-wrap: nowrap;
+  padding: 0;
 }
 
 footer {
