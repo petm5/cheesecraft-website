@@ -30,6 +30,8 @@ header {
   height: max(9vh, 4rem);
   margin-bottom: var(--layout-spacing);
   user-select: none;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 
 footer {
