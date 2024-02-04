@@ -35,6 +35,10 @@ header {
   padding: 0;
 }
 
+header > h1 {
+  font-size: min(7vw, 2em);
+}
+
 footer {
   margin-top: auto;
   padding-top: var(--layout-spacing);
@@ -77,3 +81,36 @@ thead {
   background: #eee;
 }
 
+.grid {
+  width: 100%;
+}
+
+.grid > ul {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 200px;
+  grid-gap: 1em;
+  padding: 0;
+}
+
+.grid > ul > li {
+  list-style: none;
+}
+
+.grid li a {
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.grid img {
+  width: 100%;
+  height: min(60vw, 350px);
+  object-fit: cover;
+  object-position: 50% 50%;
+  transition: transform 0.4s;
+}
+
+.grid img:hover {
+  transform: scale(110%);
+}
