@@ -10,7 +10,8 @@ body {
   padding: 0 0 1rem;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
-  color: #222;
+  color: #333;
+  font-size: 17px;
 }
 
 body > * {
@@ -113,4 +114,20 @@ thead {
 
 .grid img:hover {
   transform: scale(110%);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: #ddd;
+  }
+  header, thead {
+    background: #111;
+  }
+  footer p {
+    color: #bbb;
+  }
+  a {
+    color: cyan;
+  }
 }
