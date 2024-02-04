@@ -112,8 +112,10 @@ thead {
   transition: transform 0.4s;
 }
 
-.grid img:hover {
-  transform: scale(110%);
+@media (hover: hover) {
+  .grid img:hover {
+    transform: scale(110%);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
