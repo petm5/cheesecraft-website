@@ -1,12 +1,12 @@
 ---
 title: Minecraft Servers
-description: View the list of Minecraft worlds that are currently being hosted and their rules. Join on Minecraft Bedrock edition from our home network.
+description: View the list of Minecraft worlds that are currently being hosted and their rules. Join from a whitelisted account on Minecraft Bedrock edition.
 ---
 
 # {{ title }}
 | Name         | IP         | Port  |
 |--------------|------------|-------|
-| Cheesecraft  | mc.opcc.tk | 19132 |
+| Cheesecraft  | mc.opcc.tk | 19134 |
 | Build Battle | mc.opcc.tk | 19133 |
 
 ## Cheesecraft
