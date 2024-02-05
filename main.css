@@ -62,6 +62,12 @@ footer p {
   margin-top: 2em;
 }
 
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 article * + * {
   margin-top: 1em;
 }
