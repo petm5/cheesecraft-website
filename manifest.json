@@ -10,23 +10,26 @@
     {
       "src": "/icons/72.png",
       "type": "image/png",
-      "sizes": "72x72"
+      "sizes": "72x72",
+      "purpose": "maskable any"
     },
     {
       "src": "/icons/128.png",
       "type": "image/png",
-      "sizes": "128x128"
+      "sizes": "128x128",
+      "purpose": "maskable any"
     },
     {
       "src": "/icons/384.png",
       "type": "image/png",
-      "sizes": "384x384"
+      "sizes": "384x384",
+      "purpose": "maskable any"
     },
     {
       "src": "/icons/512.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "maskable"
+      "purpose": "maskable any"
     }
   ]
 }
