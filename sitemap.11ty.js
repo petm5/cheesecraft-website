@@ -2,6 +2,7 @@ class SiteMap {
   data() {
     return {
       eleventyExcludeFromCollections: true,
+      layout: null,
       permalink: function (data) {
         return data.site.siteMap;
       },
