@@ -40,7 +40,7 @@ markdown.renderer.rules.image = (tokens, idx, options, env, self) => {
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary('md', markdown)
   eleventyConfig.addPassthroughCopy("main.css")
-  eleventyConfig.addPassthroughCopy("_headers")
+  eleventyConfig.addPassthroughCopy("favicon.ico")
   eleventyConfig.addPairedShortcode('grid', (children) => {
     const content = markdown.render(children)
     return `<div class="grid">${content}</div>`
