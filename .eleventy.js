@@ -41,6 +41,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary('md', markdown)
   eleventyConfig.addPassthroughCopy("main.css")
   eleventyConfig.addPassthroughCopy("favicon.ico")
+  eleventyConfig.addPassthroughCopy("icons")
+  eleventyConfig.addPassthroughCopy("manifest.json")
   eleventyConfig.addPairedShortcode('grid', (children) => {
     const content = markdown.render(children)
     return `<div class="grid">${content}</div>`

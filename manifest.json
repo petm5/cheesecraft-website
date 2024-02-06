@@ -1,0 +1,32 @@
+{
+  "name": "Operation Cheesecake",
+  "short_name": "OPCC",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ECE66F",
+  "theme_color": "#EFE86C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/icons/128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/icons/384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/icons/512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}
