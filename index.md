@@ -3,5 +3,5 @@ description: Operation Cheesecake is a collection of interesting tech projects a
 ---
 
 {% grid %}
-- [![Minecraft dirt texture wallpaper](/images/dirt.avif "Minecraft Servers")](/minecraft)
+- [![Minecraft dirt texture wallpaper](./images/dirt.avif "Minecraft Servers")](/minecraft)
 {% endgrid %}

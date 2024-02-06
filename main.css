@@ -68,7 +68,7 @@ table {
   white-space: nowrap;
 }
 
-article * + * {
+article > * + * {
   margin-top: 1em;
 }
 
@@ -97,7 +97,7 @@ thead {
 .grid > ul {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 1em;
+  grid-gap: 2em;
   padding: 0;
 }
 
@@ -120,6 +120,7 @@ thead {
   object-fit: cover;
   object-position: 50% 50%;
   transition: transform 0.4s;
+  position: relative;
 }
 
 @media (hover: hover) {
