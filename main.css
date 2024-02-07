@@ -66,6 +66,8 @@ table {
   display: block;
   overflow-x: auto;
   white-space: nowrap;
+  max-width: fit-content;
+  box-shadow: 0px 3px 50px #eee;
 }
 
 article > * + * {
@@ -136,7 +138,6 @@ thead {
   }
   header, thead {
     background: #111;
-    box-shadow: none;
   }
   footer p {
     color: #bbb;
@@ -144,6 +145,8 @@ thead {
   a {
     color: cyan;
   }
+  header,
+  table,
   .grid > ul > li {
     box-shadow: none;
   }
