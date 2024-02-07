@@ -3,8 +3,8 @@
   "short_name": "OPCC",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#EFE86C",
-  "theme_color": "#4A5E74",
+  "background_color": "#4A5E74",
+  "theme_color": "#202933",
   "orientation": "portrait-primary",
   "icons": [
     {
