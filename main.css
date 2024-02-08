@@ -125,6 +125,10 @@ thead {
   position: relative;
 }
 
+.grid li a:focus img {
+  transform: scale(110%);
+}
+
 @media (hover: hover) {
   .grid img:hover {
     transform: scale(110%);
