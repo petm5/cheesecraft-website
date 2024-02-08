@@ -1,5 +1,5 @@
 const cacheName = "cache"
-const fallbackUrl = "/offline.html"
+const fallbackUrl = "/offline"
 const precachedResources = ["/app.js", "/main.css", "/manifest.json", "/favicon.ico"]
 
 self.addEventListener("install", event => {
