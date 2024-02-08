@@ -4,10 +4,10 @@ description: View the list of Minecraft worlds that are currently being hosted a
 ---
 
 # {{ title }}
-| Name         | IP         | Port  |
-|--------------|------------|-------|
-| Cheesecraft  | mc.opcc.tk | 19134 |
-| Build Battle | mc.opcc.tk | 19133 |
+| Name         | IP               | Port  |
+|--------------|------------------|-------|
+| Cheesecraft  | opcc.duckdns.org | 19134 |
+| Build Battle | opcc.duckdns.org | 19133 |
 
 ## Cheesecraft
 
