@@ -10,8 +10,9 @@ body {
   padding: 0 0 1rem;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
-  color: #333;
   font-size: 17px;
+  background: #222;
+  color: #ddd;
 }
 
 body > * {
@@ -27,19 +28,70 @@ header {
   display: grid;
   place-content: center;
   width: 100%;
-  background: #eee;
-  height: max(9vh, 4rem);
+  height: 100vh;
   margin-bottom: var(--layout-spacing);
   user-select: none;
   overflow: hidden;
   text-wrap: nowrap;
   padding: 0;
-  box-shadow: 0px 0px 12px lightgray;
   z-index: 1;
+  color: white;
+  box-shadow: 0px 0px 60px black;
+  background-image: url("/images/banner.jpg");
 }
 
-header > h1 {
-  font-size: min(7vw, 2em);
+header > div {
+  text-align: center;
+  text-shadow: 0 0 30px gray;
+}
+
+header a {
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+header h1 {
+  font-size: 38px;
+}
+
+header div.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  // box-shadow: 0 0 400px rgba(0,0,0,0.2) inset;
+}
+
+header img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.7);
+  object-fit: cover;
+}
+
+.buttons {
+  margin-top: 24px;
+}
+
+.button {
+  display: inline-block;
+  padding: 16px;
+  text-align: center;
+}
+
+.button .icon {
+  border-radius: 100%;
+  background: lightgray;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  align-items: center;
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
 footer {
@@ -51,7 +103,7 @@ footer p {
   border-top: 1px solid #ccc;
   padding-top: 0.25em;
   font-size: 0.9rem;
-  color: #767676;
+  color: #bbb;
 }
 
 :is(h1, h2, h3) {
@@ -62,12 +114,21 @@ footer p {
   margin-top: 2em;
 }
 
+:is(h1, h2, h3) > a {
+  text-decoration: none;
+  color: unset;
+}
+
+:is(h1, h2, h3):hover > a {
+  text-decoration: underline;
+}
+
 table {
   display: block;
   overflow-x: auto;
   white-space: nowrap;
   max-width: fit-content;
-  box-shadow: 0px 3px 50px #eee;
+  box-shadow: 0px 3px 50px black;
 }
 
 article > * + * {
@@ -75,7 +136,7 @@ article > * + * {
 }
 
 a {
-  color: navy;
+  color: cyan;
   text-underline-offset: 0.15em;
 }
 
@@ -89,7 +150,7 @@ table {
 }
 
 thead {
-  background: #eee;
+  background: #111;
 }
 
 .grid {
@@ -136,22 +197,4 @@ thead {
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background: black;
-    color: #ddd;
-  }
-  header, thead {
-    background: #111;
-  }
-  footer p {
-    color: #bbb;
-  }
-  a {
-    color: cyan;
-  }
-  header,
-  table,
-  .grid > ul > li {
-    box-shadow: none;
-  }
 }

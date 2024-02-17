@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Play",
+    "href": "/#play",
+    "icon": "<i class='fa-solid fa-cube'></i>"
+  },
+  {
+    "name": "Discord",
+    "href": "/discord",
+    "icon": "<i class='fa-brands fa-discord'></i>"
+  },
+  {
+    "name": "Moderators",
+    "href": "/#team",
+    "icon": "<i class='fa-solid fa-crown'></i>"
+  }
+]

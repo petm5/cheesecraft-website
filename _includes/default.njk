@@ -1,6 +1,34 @@
----
-layout: wrapper.njk
----
-<article>
-  {{ content | safe }}
-</article>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ description }}" />
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#202933" />
+    <script defer src="/app.js"></script>
+    <script src="https://kit.fontawesome.com/487153e86b.js" crossorigin="anonymous"></script>
+    <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
+  </head>
+  <body>
+    {% block header %}
+    <header class="banner">
+      <div>
+        <h1>{{ site.title }}</h1>
+      </div>
+      <div class="image">
+        {% image "images/banner.jpg" %}
+      </div>
+    </header>
+    {% endblock %}
+    <main>
+      <article>
+        {{ content | safe }}
+      </article>
+    </main>
+    <footer>
+      <p>© {{ site.copyright }} {{ page.date.getUTCFullYear() }}</p>
+    </footer>
+  </body>
+</html>

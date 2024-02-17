@@ -1,7 +1,12 @@
 ---
-description: Operation Cheesecake is a collection of interesting tech projects and self-hosted services. Join Minecraft worlds or run your own Linux hosts.
+layout: home.njk
+description: Cheesecraft is a vanilla SMP with a focus on building. Have fun gathering resources and collaborating to create impressive builds.
 ---
 
-{% grid %}
-- [![Minecraft dirt texture wallpaper](./images/dirt.avif "Minecraft Servers")](/minecraft)
-{% endgrid %}
+# [Server IPs](#play)
+
+| Name         | IP               | Port  |
+|--------------|------------------|-------|
+| Cheesecraft  | opcc.duckdns.org | 19134 |
+| Build Battle | opcc.duckdns.org | 19133 |
+

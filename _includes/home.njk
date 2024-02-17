@@ -1,0 +1,21 @@
+{% extends "default.njk" %}
+
+{% block header %}
+<header class="home-banner">
+  <div>
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.tagline }}</p>
+    <div class="buttons">
+    {% for item in navItems %}
+    <a href="{{ item.href }}" class="button">
+      <span class="icon">{{ item.icon | safe }}</span>
+      <p>{{ item.name }}</p>
+    </a>
+    {% endfor %}
+    </div>
+  </div>
+  <div class="image">
+    {% image "images/banner.jpg" %}
+  </div>
+</header>
+{% endblock %}

@@ -8,10 +8,10 @@ const Image = require('@11ty/eleventy-img')
 
 markdown.renderer.rules.image = (tokens, idx, options, env, self) => {
   const token = tokens[idx]
-  let imgSrc = token.attrGet('src')
-  const imgAlt = token.content
-  const imgTitle = token.attrGet('title')
+  return generateImage(token.attrGet('src'), token.content, token.attrGet('title'))
+}
 
+function generateImage (imgSrc, imgAlt = null, imgTitle = null) {
   const htmlOpts = {
     title: imgTitle,
     alt: imgAlt,
@@ -45,8 +45,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("manifest.json")
   eleventyConfig.addPassthroughCopy("app.js")
   eleventyConfig.addPassthroughCopy("sw.js")
+  eleventyConfig.addNunjucksShortcode('image', generateImage)
   eleventyConfig.addPairedShortcode('grid', (children) => {
-    const content = markdown.render(children)
-    return `<div class="grid">${content}</div>`
-  });
+    return `
+      <div class="grid">
+      
+      ${content}
+      
+      </div>`
+  })
 };
