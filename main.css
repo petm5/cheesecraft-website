@@ -75,7 +75,7 @@ header a {
 }
 
 header h1 {
-  font-size: 48px;
+  font-size: min(50px, 12vw);
 }
 
 header div.image {
@@ -100,13 +100,20 @@ header img {
 
 header div.content {
   text-align: center;
-  text-shadow: 0 0 5px rgba(0,0,0,0.1), 0 0 90px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2), 0 0 90px rgba(0,0,0,0.5);
   z-index: 1;
   font-size: 16px;
+  max-width: 100vw;
+  padding: 22px;
 }
 
 .buttons {
   margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fit-content;
+  justify-content: center;
 }
 
 .button {
@@ -115,13 +122,15 @@ header div.content {
   text-align: center;
   font-size: 17px;
   transition: transform 0.3s;
+  box-sizing: border-box;
 }
 
 .button .icon {
   border-radius: 100%;
   background: #3d5572;
   width: 100px;
-  height: 100px;
+  max-width: max(80px, 30vw);
+  aspect-ratio: 1;
   display: grid;
   align-items: center;
   font-size: 40px;
@@ -136,6 +145,10 @@ header div.content {
 
 .button:hover .icon {
   box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+.button p {
+  text-shadow: 0 0 3px rgba(0,0,0,0.7);
 }
 
 footer {
