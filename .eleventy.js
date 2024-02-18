@@ -47,6 +47,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("manifest.json")
   eleventyConfig.addPassthroughCopy("app.js")
   eleventyConfig.addPassthroughCopy("sw.js")
+  eleventyConfig.addPassthroughCopy("fonts")
   eleventyConfig.addNunjucksShortcode('image', generateImage)
   eleventyConfig.addPairedShortcode('grid', (children) => {
     return `

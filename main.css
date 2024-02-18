@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.woff') format('woff');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -58,7 +63,6 @@ header {
   padding: 0;
   color: white;
   box-shadow: 0 0 800px rgba(0,0,0,0.5) inset;
-  background-image: url("/images/banner.jpg");
   transform-style: preserve-3d;
   flex-shrink: 0;
 }
@@ -87,6 +91,7 @@ header div.image {
   overflow: hidden;
   transform: translateZ(-10px) scale(2);
   transform-origin: bottom;
+  pointer-events: none;
 }
 
 header img {
@@ -138,6 +143,7 @@ header div.content {
   margin-bottom: 10px;
   box-shadow: 0 0 12px rgba(0,0,0,0.3);
   transition: box-shadow 0.6s;
+  font-family: 'icomoon' !important;
 }
 
 .button:hover {
