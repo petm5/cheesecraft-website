@@ -1,6 +1,6 @@
 {
-  "name": "Operation Cheesecake",
-  "short_name": "OPCC",
+  "name": "CheeseCraft - MC",
+  "short_name": "CheeseCraft",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#4A5E74",
