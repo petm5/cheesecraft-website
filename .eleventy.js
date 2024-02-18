@@ -3,6 +3,8 @@ const markdown = require('markdown-it')({
   breaks: false,
   linkify: true,
 })
+.use(require('markdown-it-attrs'))
+.use(require("markdown-it-anchor"))
 
 const Image = require('@11ty/eleventy-img')
 
