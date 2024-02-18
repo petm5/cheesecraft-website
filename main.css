@@ -30,6 +30,7 @@ body {
   width: 100%;
   min-height: 50%;
   flex-grow: 1;
+  flex-shrink: 0;
   box-shadow: 0px 60px 60px -60px black inset;
 }
 
