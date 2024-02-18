@@ -52,7 +52,7 @@ header {
   display: grid;
   place-content: center;
   width: 100%;
-  height: 30vh;
+  height: 30svh;
   user-select: none;
   text-wrap: nowrap;
   padding: 0;
@@ -64,7 +64,7 @@ header {
 }
 
 body.home header {
-  height: 100vh;
+  height: 100svh;
 }
 
 header a {

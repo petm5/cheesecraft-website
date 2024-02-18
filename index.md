@@ -3,7 +3,7 @@ layout: home.njk
 description: Cheesecraft is a vanilla SMP with a focus on building. Have fun gathering resources and collaborating to create impressive builds.
 ---
 
-# Server IPs {#play}
+# Server IP {#play}
 
 | Name         | IP               | Port  |
 |--------------|------------------|-------|
