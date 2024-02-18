@@ -16,9 +16,14 @@ body {
   font-size: 17px;
   overflow-y: scroll;
   perspective: 10px;
+  perspective-origin: 50% 30%;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
+}
+
+body.home {
+  perspective-origin: bottom;
 }
 
 .wrapper {
@@ -28,7 +33,6 @@ body {
   color: #ddd;
   transform: translateZ(0px);
   width: 100%;
-  min-height: 50%;
   flex-grow: 1;
   flex-shrink: 0;
   box-shadow: 0px 60px 60px -60px black inset;
@@ -59,7 +63,7 @@ header {
   flex-shrink: 0;
 }
 
-header.home-banner {
+body.home header {
   height: 100vh;
 }
 
@@ -82,11 +86,7 @@ header div.image {
   right: 0;
   overflow: hidden;
   transform: translateZ(-10px) scale(2);
-  height: 100vh;
-}
-
-header.banner div.image {
-  transform: translateZ(-10px) scale(2) translateY(-50%)
+  transform-origin: bottom;
 }
 
 header img {
@@ -100,7 +100,7 @@ header img {
 
 header div.content {
   text-align: center;
-  text-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 120px rgba(0,0,0,0.4);
+  text-shadow: 0 0 5px rgba(0,0,0,0.1), 0 0 90px rgba(0,0,0,0.5);
   z-index: 1;
   font-size: 16px;
 }

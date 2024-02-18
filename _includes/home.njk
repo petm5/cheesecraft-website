@@ -1,21 +1,15 @@
 {% extends "default.njk" %}
 
+{% set bodyClass = "home" %}
+
 {% block header %}
-<header class="home-banner">
-  <div class="image">
-    {% image "images/banner.jpg" %}
-  </div>
-  <div class="content">
-    <h1>{{ site.title }}</h1>
-    <p>{{ site.tagline }}</p>
-    <div class="buttons">
-    {% for item in navItems %}
-    <a href="{{ item.href }}" class="button">
-      <span class="icon">{{ item.icon | safe }}</span>
-      <p>{{ item.name }}</p>
-    </a>
-    {% endfor %}
-    </div>
-  </div>
-</header>
+<h1>{{ site.title }}</h1>
+<p>{{ site.tagline }}</p>
+<div class="buttons">
+{% for item in navItems %}
+<a href="{{ item.href }}" class="button">
+  <span class="icon">{{ item.icon | safe }}</span>
+  <p>{{ item.name }}</p>
+</a>
+{% endfor %}
 {% endblock %}

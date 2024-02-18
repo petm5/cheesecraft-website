@@ -11,17 +11,17 @@
     <script src="https://kit.fontawesome.com/487153e86b.js" crossorigin="anonymous"></script>
     <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
   </head>
-  <body>
-    {% block header %}
+  <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
     <header class="banner">
       <div class="image">
         {% image "images/banner.jpg" %}
       </div>
       <div class="content">
+        {% block header %}
         <h1>{{ site.title }}</h1>
+        {% endblock %}
       </div>
     </header>
-    {% endblock %}
     <div class="wrapper">
       <main>
         <article>
