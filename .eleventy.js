@@ -11,7 +11,7 @@ markdown.renderer.rules.image = (tokens, idx, options, env, self) => {
   return generateImage(token.attrGet('src'), token.content, token.attrGet('title'))
 }
 
-function generateImage (imgSrc, imgAlt = null, imgTitle = null) {
+function generateImage (imgSrc, imgAlt = "", imgTitle = "") {
   const htmlOpts = {
     title: imgTitle,
     alt: imgAlt,

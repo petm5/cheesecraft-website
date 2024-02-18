@@ -3,25 +3,40 @@
   margin: 0;
 }
 
+html,
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 0 0 1rem;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+  padding: 0;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
   font-size: 17px;
-  background: #222;
-  color: #ddd;
+  overflow-y: scroll;
+  perspective: 10px;
 }
 
-body > * {
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background: #222;
+  color: #ddd;
+  transform: translateZ(0px);
+  width: 100%;
+  min-height: 50%;
+  box-shadow: 0px 60px 60px -60px black inset;
+}
+
+.wrapper > * {
   --layout-spacing: max(9vh, 4rem);
   --max-width: 70ch;
   width: min(100%, var(--max-width));
   margin-left: auto;
   margin-right: auto;
   padding: 0 clamp(1rem, 5vw, 3rem);
+  padding-top: var(--layout-spacing);
 }
 
 header {
@@ -29,20 +44,13 @@ header {
   place-content: center;
   width: 100%;
   height: 100vh;
-  margin-bottom: var(--layout-spacing);
   user-select: none;
-  overflow: hidden;
   text-wrap: nowrap;
   padding: 0;
-  z-index: 1;
   color: white;
-  box-shadow: 0px 0px 60px black;
+  box-shadow: 0 0 800px rgba(0,0,0,0.5) inset;
   background-image: url("/images/banner.jpg");
-}
-
-header > div {
-  text-align: center;
-  text-shadow: 0 0 30px gray;
+  transform-style: preserve-3d;
 }
 
 header a {
@@ -53,17 +61,17 @@ header a {
 }
 
 header h1 {
-  font-size: 38px;
+  font-size: 48px;
 }
 
 header div.image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  // box-shadow: 0 0 400px rgba(0,0,0,0.2) inset;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  transform: translateZ(-10px) scale(2);
 }
 
 header img {
@@ -71,6 +79,15 @@ header img {
   height: 100%;
   filter: brightness(0.7);
   object-fit: cover;
+  position: relative;
+  z-index: -1;
+}
+
+header div.content {
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 120px rgba(0,0,0,0.4);
+  z-index: 1;
+  font-size: 16px;
 }
 
 .buttons {
@@ -81,22 +98,34 @@ header img {
   display: inline-block;
   padding: 16px;
   text-align: center;
+  font-size: 17px;
+  transition: transform 0.3s;
 }
 
 .button .icon {
   border-radius: 100%;
-  background: lightgray;
+  background: #3d5572;
   width: 100px;
   height: 100px;
   display: grid;
   align-items: center;
   font-size: 40px;
   margin-bottom: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  transition: box-shadow 0.6s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:hover .icon {
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
 }
 
 footer {
   margin-top: auto;
-  padding-top: var(--layout-spacing);
+  margin-bottom: 1em;
 }
 
 footer p {
@@ -117,9 +146,11 @@ footer p {
 :is(h1, h2, h3) > a {
   text-decoration: none;
   color: unset;
+  display: block;
+  width: 100%;
 }
 
-:is(h1, h2, h3):hover > a {
+:is(h1, h2, h3) > a:hover {
   text-decoration: underline;
 }
 
