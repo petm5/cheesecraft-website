@@ -36,7 +36,7 @@ body.home {
   flex-direction: column;
   background: #222;
   color: #ddd;
-  transform: translateZ(0px);
+  z-index: 1;
   width: 100%;
   flex-grow: 1;
   flex-shrink: 0;
@@ -62,7 +62,6 @@ header {
   text-wrap: nowrap;
   padding: 0;
   color: white;
-  box-shadow: 0 0 800px rgba(0,0,0,0.5) inset;
   transform-style: preserve-3d;
   flex-shrink: 0;
 }
@@ -94,13 +93,30 @@ header div.image {
   pointer-events: none;
 }
 
+header div.image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 100px rgba(0,0,0,0.4) inset;
+}
+
 header img {
   width: 100%;
   height: 100%;
-  filter: brightness(0.7);
+  filter: brightness(0.7) ;
   object-fit: cover;
   position: relative;
   z-index: -1;
+}
+
+header img::after {
+  content: " ";
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: block;
+  position: relative;
 }
 
 header div.content {
