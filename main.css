@@ -11,6 +11,13 @@
 }
 
 @font-face {
+  font-family: 'Banner Fallback';
+  src: local('Arial');
+  font-stretch: condensed;
+  font-weight: 600;
+}
+
+@font-face {
   font-family: 'Protest Riot';
   src: local('Protest Riot Regular'), url('fonts/ProtestRiot-Regular.ttf') format('truetype');
   font-display: swap;
@@ -77,7 +84,7 @@ header {
   color: white;
   transform-style: preserve-3d;
   flex-shrink: 0;
-  font-family: "Protest Riot", system-ui, sans-serif;
+  font-family: "Protest Riot", "Banner Fallback", system-ui, sans-serif;
 }
 
 body.home header {
