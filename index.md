@@ -3,17 +3,15 @@ layout: home.njk
 description: Cheesecraft is a vanilla SMP with a focus on building. Have fun gathering resources and collaborating to create impressive builds.
 ---
 
-# Welcome
+# Welcome! {#play}
 
-This is CheeseCraft, a Minecraft SMP focused on resource gathering and building. This is a whitelisted server, which means you need to apply and be accepted before you can join. Application is currently limited to invitation only, meaning that you need to be invited by a member. Please read the rules and expectations below and fill out the application form if you are interested.
-
-# Join Today! {#play}
-
-The server is currently limited to Minecraft Bedrock Edition only. You must be on the latest version to join.
+This is CheeseCraft, a Minecraft survival server focused on resource gathering and building. The server is whitelisted, which means you need to apply and be accepted before you can join. Application is currently limited to invitation by members only. Please read the rules and expectations below and fill out the application form if you are interested.
 
 | IP              | Port  |
 |---------------- |-------|
 | play.mc.opcc.tk | 19132 |
+
+The server is limited to Minecraft Bedrock Edition only. You must be on the latest release to join.
 
 # Rules and Expectations {#rules}
 
