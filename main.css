@@ -51,10 +51,13 @@ body.home {
   perspective-origin: bottom;
 }
 
+body, .wrapper {
+  background: #222;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
-  background: #222;
   color: #ddd;
   z-index: 1;
   width: 100%;
