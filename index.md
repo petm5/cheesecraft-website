@@ -1,6 +1,6 @@
 ---
 layout: home.njk
-description: Cheesecraft is a vanilla SMP with a focus on building. Have fun gathering resources and collaborating to create impressive builds.
+description: CheeseCraft - A Minecraft survival server focused on resource gathering and building. Have fun collaborating to create impressive builds.
 ---
 
 # Welcome! {#play}
@@ -28,25 +28,13 @@ This server has a few mods to enhance your gameplay experience:
 - One Player Sleep: Skips the night without everyone sleeping.
 - Chunk Loader: Lets your farms keep running while you're away.
 
-# Application Form
+# Application Form {#join}
 
 Please fill out [this form](https://forms.gle/yJqJ6eq4upYMy89m8) to apply for membership. We will review your application and contact you within 24 hours to a few days.
 
-# Screenshots
+# Gallery
 
-Add stuff here
-
-## Past Seasons
-
-### Season 4
-
-### Season 3
-
-### Season 2
-
-### Season 1
-
-This world may have been lost...
+You can find screenshots of current and past seasons [here](/gallery).
 
 # Contact Our Team {#team}
 
@@ -54,4 +42,3 @@ If you have any questions, comments, or feedback, please feel free to contact us
 
 - Email: petms+mc@proton.me
 - Discord: [CheeseCraft](https://discord.com/channels/1209890245768642661/1209890246653775943)
-- Hangouts: [Gamer Group](https://mail.google.com/chat/u/0/#chat/space/AAAAhfPka84), [Cheesecraft](https://mail.google.com/chat/u/0/#chat/space/AAAATskUQqM)
