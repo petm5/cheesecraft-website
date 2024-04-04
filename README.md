@@ -112,7 +112,7 @@ To improve reliability and ease of maintenance, I designed [an image-based NixOS
 
 `.github/workflows/build.yml`: Uses Github Actions to automatically build a release whenever an update is pushed to the repository.
 
-# OPCC
+### OPCC
 
 This is the configuration for the virtualised NixOS system that runs the Minecraft server instances. In this project, it is running on top of `qemu` and `libvirt` on Nixlet. The Nix Flake contained in this repo is designed to be extensible with reusable Nix modules. Secret management is handled by [`agenix`](https://github.com/ryantm/agenix).
 
