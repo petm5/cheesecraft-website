@@ -34,7 +34,7 @@ Please fill out [this form](https://forms.gle/yJqJ6eq4upYMy89m8) to apply for me
 
 # Gallery
 
-You can find screenshots of current and past seasons [here](/gallery).
+You can find screenshots of [current and past seasons](/gallery) here.
 
 # Contact Our Team {#team}
 
