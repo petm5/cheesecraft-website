@@ -84,6 +84,54 @@ The site was designed to give an introduction to my Minecraft server for new pla
 
 `images/`: Contains the original images used on the site. These images are processed by `eleventy-img` and automatically converted to different resolutions and formats for optimization.
 
-### Server
+### Nixlet
 
+The server was designed to be secure and easy to maintain. I started out by installing NixOS on a repurposed laptop and writing a Nix flake to configure it. The project initially started out with me writing my own virtualisation module that uses `qemu` to run auto-generated virtual NixOS systems. A bridge interface was used to connect the virtual machines to the local network. The virtual systems would each run their own instances of the Minecraft server software and be assigned their own IP addresses by the local router, just like any other device on the network. It was ultimately decided that the scheme with a cluster of auto-generated VMs on a base NixOS system was overly complex, difficult to maintain and too prone to instability.
 
+To improve reliability and ease of maintenance, I designed [an image-based NixOS system known as `nixlet`](https://github.com/peter-marshall5/nixlet) that I installed as a base layer on the server. The "hypervisor" system profile used on the server comes with `libvirt` and `qemu` pre-installed as well as some example VM configurations. The system is very easy to install and has support for RAID-1 arrays to improve reliability. Updates are handled automatically in a similar way to Chrome OS, with two separate system partitions allowing for atomic updates with minimal downtime and easy rollbacks to the previous system version. A single virtual NixOS system that runs the Minecraft server instances was installed on top of the hypervisor. Other isolated systems could be installed alongside it, allowing the sharing of storage space and computing resources while maintaining isolation. System updates are automatically generated according to Git tags by GitHub's CI.
+
+`flake.nix`: Defines Nixlet's basic NixOS configuration modules and system profiles. Update files and flashable disk images can be built via `nix build github:peter-marshall5/nixlet#profile`.
+
+`modules/default.nix`: Imports the default Nixlet configuration and disk image builder. Called from `flake.nix` to generate a Nixlet system.
+
+`modules/base-config.nix`: The base Nixlet configuration. This sets some NixOS system defaults suitable for minimal systems.
+
+'modules/image/erofs.nix': Outputs a compressed EROFS filesystem based on the given Nix store contents. Based on a pull request that was not merged into `Nixpkgs` yet.
+
+'modules/image/ab-image.nix`: Configures and builds a Nixlet disk image. The filesystems are configured to mount the partition containing the Nix store of the current system version. The flashable disk image is built via `systemd-repart`. `systemd-repart` runs in the booted Nixlet system as well to expand the flashed image on first boot. Finally, `systemd-sysupdate` is configured to periodically fetch and install system updates from the releases section of the GitHub repo.
+
+`modules/image/ab-image-release.nix`: Pulls the update files and disk image together into a format suitable for `systemd-sysupdate` and GitHub releases.
+
+`modules/image/build-ab-image.nix`: Creates a shortcut to build a disk image release from a given NixOS system configuration.
+
+`modules/profiles/debug.nix`: Enables some debugging options for testing if included in the system, not used for releases.
+
+`modules/profiles/server.nix`: Enables some options suitable for servers, like disabling power management and loading Ethernet drivers.
+
+`modules/profiles/hypervisor.nix`: Enables some options suitable for hypervisor systems, and included in the `hypervisor` profile. This extends `server.nix` by enabling support for RAID arrays, installing `libvirt` and `qemu`, adding a bridge interface for VM networking, and including example VM configuration files.
+
+`.github/workflows/build.yml`: Uses Github Actions to automatically build a release whenever an update is pushed to the repository.
+
+# OPCC
+
+This is the configuration for the virtualised NixOS system that runs the Minecraft server instances. In this project, it is running on top of `qemu` and `libvirt` on Nixlet. The Nix Flake contained in this repo is designed to be extensible with reusable Nix modules. Secret management is handled by [`agenix`](https://github.com/ryantm/agenix).
+
+`flake.nix`: Defines dependencies, the system profile and the configuration for (`deploy-rs`)[https://github.com/serokell/deploy-rs].
+
+`ssh/host-keys.nix`: Defines the server's SSH public key. Used by `agenix` to decrypt secrets on the server.
+
+`ssh/trusted-keys.nix`: Defines SSH public keys that are authorized to access the server. Also used by `agenix` for encrypting secrets on development machines.
+
+`secrets/secrets.nix`: Lists secrets to be managed by `agenix` and pulls in the trusted SSH keys.
+
+`hosts/opcc/configuration.nix`: Configuration specific to the `opcc` server. Includes setting up the Minecraft server instances.
+
+`hosts/opcc/hardware-configuration.nix`: Defines the `opcc` server's hardware configuration and filesystems. Pulls in the `qemu-guest` profile since the system is running in a VM.
+
+`modules/default.nix`: Sets some generic default options for Linux servers and pulls in the other modules in this directory.
+
+`modules/services/networking/duckdns.nix`: A Nix module for dynamic DNS via [DuckDNS](https://www.duckdns.org/).
+
+`modules/services/networking/upnp.nix`: Runs a UPnP client to automatically open firewall ports in the router.
+
+`modules/services/minecraft.nix`: A Nix module that runs a Minecraft Bedrock edition server. Based on [this handy Docker image](https://github.com/itzg/docker-minecraft-bedrock-server).
