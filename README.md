@@ -116,7 +116,7 @@ To improve reliability and ease of maintenance, I designed [an image-based NixOS
 
 This is the configuration for the virtualised NixOS system that runs the Minecraft server instances. In this project, it is running on top of `qemu` and `libvirt` on Nixlet. The Nix Flake contained in this repo is designed to be extensible with reusable Nix modules. Secret management is handled by [`agenix`](https://github.com/ryantm/agenix).
 
-`flake.nix`: Defines dependencies, the system profile and the configuration for (`deploy-rs`)[https://github.com/serokell/deploy-rs].
+`flake.nix`: Defines dependencies, the system profile and the configuration for [`deploy-rs`](https://github.com/serokell/deploy-rs).
 
 `ssh/host-keys.nix`: Defines the server's SSH public key. Used by `agenix` to decrypt secrets on the server.
 
