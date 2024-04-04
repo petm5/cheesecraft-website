@@ -10,9 +10,7 @@ The following is a summary of the project and a description of its design proces
 
 *TODO*
 
-## Minimum Requirements
-
-These goals were the minimum requirements for the project:
+## Goals
 
 ### Minecraft Server
 
@@ -56,5 +54,36 @@ I wanted my site to be hosted in a way that is fast, secure, and easy to develop
 
 I initially considered using [Astro](https://astro.build/) for its great out of the box feature set, although its complexity proved to put using it outside of the scope of this project. The static site generator [Eleventy](https://www.11ty.dev/) was ultimately chosen instead due to its simplicity, which makes it highly customizable and extensible. While Astro is complex and does things its own way, Eleventy is designed to give much more control to the developer and can adapt to specific use cases more easily.
 
-# Server
+The site was designed to give an introduction to my Minecraft server for new players who may be interested. The main page describes the server's rules, expectations, and goals and contains a registration form and some contact information. There is also a gallery page that will contain screenshots from current and past game seasons as well as short descriptions of each season's events and history.
+
+`.eleventy.js`: This is a configuration file that sets up Eleventy and its page generation components. A custom Markdown parser is set up and some plugins are added to enable the generation of HTML header anchors. The `eleventy-img` plugin is loaded and configured to output images into a predefined directory. Some static files are passed through to the generated website, and a custom `grid` shortcode is created to enable grid formatting later.
+
+`flake.nix`: This file sets the project up as a Nix flake. A development shell with `node.js` pre-installed can be launched by running `nix develop` in the project directory.
+
+`main.css`: Describes the formatting and theme for the entire site. This is by far the largest file in the entire project. Custom fonts are loaded for the header and body text. Custom fonts are optimized such that a system font may be used while they are loading. The header is set to take up the entire viewport size on the homepage, and to appear as a top banner on all other pages. The header's background image has a 3D parallax effect written in pure CSS. The effect is created by having the header be positioned behind the rest of the document in 3D space. The header text and tagline are centered with CSS flexbox, and the links are styled as buttons. The header text and buttons are automatically scaled to look good on all devices and screen sizes. Some shadows, hover animations, and various visual elements are added to enhance the visual appeal of the site. The footer is positioned at the bottom of the page. Some margins are added to separate paragraphs from each other and the top and bottom of the page. Padding is used to ensure that text is spaced away from the side of the screen on mobile devices.
+
+`manifest.json`: This PWA manifest allows the site to be installed to the home screen as if it was a mobile app. It describes the site title, the way it should be displayed, and contains links to its app icons.
+
+`robots.txt.njk`: This Nunjucks file generates the `robots.txt` file for search engines. It points to the sitemap and allows all pages to be indexed.
+
+`sitemap.11ty.js`: This script generates a plain-text sitemap containing all of the site's pages that are not excluded from Eleventy's collections (indicating that a page is internal and does not represent content.)
+
+`_data/layout.js`: This script sets the default template for all pages unless specified manually.
+
+`_data/navItems.json`: The top navigation items are represented here along with their Font Awesome icons for easy modification. These are rendered as buttons on the main page.
+
+`_data/site.json`: Describes the site to Eleventy and to templates. Contains the site title, tagline, copyright string, base URL, and paths to some metadata files.
+
+`_includes/default.njk`: This is the base HTML template for the entire site. It handles linking in fonts and stylesheets, setting the page title and description, and uses semantic HTML tags to define content areas.
+
+`_includes/home.njk`: This is the template for the main page, extending the default template. It sets up the large banner and renders the navigation items as buttons.
+
+`fonts/`: Contains all the custom fonts used on the site.
+
+`icons/`: Contains the site's icons, as well as a maskable icon with a solid background.
+
+`images/`: Contains the original images used on the site. These images are processed by `eleventy-img` and automatically converted to different resolutions and formats for optimization.
+
+### Server
+
 
