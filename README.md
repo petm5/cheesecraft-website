@@ -98,7 +98,7 @@ To improve reliability and ease of maintenance, I designed [an image-based NixOS
 
 'modules/image/erofs.nix': Outputs a compressed EROFS filesystem based on the given Nix store contents. Based on a pull request that was not merged into `Nixpkgs` yet.
 
-'modules/image/ab-image.nix`: Configures and builds a Nixlet disk image. The filesystems are configured to mount the partition containing the Nix store of the current system version. The flashable disk image is built via `systemd-repart`. `systemd-repart` runs in the booted Nixlet system as well to expand the flashed image on first boot. Finally, `systemd-sysupdate` is configured to periodically fetch and install system updates from the releases section of the GitHub repo.
+`modules/image/ab-image.nix`: Configures and builds a disk image with A/B system partitions. The filesystems are configured to mount the partition containing the Nix store of the current system version. The flashable disk image is built via `systemd-repart`. `systemd-repart` runs in the booted Nixlet system as well to expand the flashed image on first boot. Finally, `systemd-sysupdate` is configured to periodically fetch and install system updates from the releases section of the GitHub repo.
 
 `modules/image/ab-image-release.nix`: Pulls the update files and disk image together into a format suitable for `systemd-sysupdate` and GitHub releases.
 
@@ -120,7 +120,7 @@ This is the configuration for the virtualised NixOS system that runs the Minecra
 
 `ssh/host-keys.nix`: Defines the server's SSH public key. Used by `agenix` to decrypt secrets on the server.
 
-`ssh/trusted-keys.nix`: Defines SSH public keys that are authorized to access the server. Also used by `agenix` for encrypting secrets on development machines.
+`ssh/trusted-keys.nix`: Defines SSH public keys that are authorized to access the server. Also used by `agenix` to encrypt secrets on development machines.
 
 `secrets/secrets.nix`: Lists secrets to be managed by `agenix` and pulls in the trusted SSH keys.
 
