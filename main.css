@@ -28,10 +28,8 @@
   margin: 0;
 }
 
-html,
-body {
-    height: 100%;
-    overflow: hidden;
+html {
+  overflow: hidden;
 }
 
 body {
@@ -40,15 +38,19 @@ body {
   line-height: 1.5;
   font-size: 17px;
   overflow-y: scroll;
+  overflow-x: hidden;
   perspective: 10px;
-  perspective-origin: 50% 30%;
+  perspective-origin: right 30%;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
+  height: 100svh;
+  width: 100svw;
+  -webkit-overflow-scrolling: touch;
 }
 
 body.home {
-  perspective-origin: bottom;
+  perspective-origin: bottom right;
 }
 
 body, .wrapper {
@@ -114,7 +116,7 @@ header div.image {
   right: 0;
   overflow: hidden;
   transform: translateZ(-10px) scale(2);
-  transform-origin: bottom;
+  transform-origin: bottom right;
   pointer-events: none;
 }
 
@@ -133,8 +135,6 @@ header img {
   height: 100%;
   filter: brightness(0.7) ;
   object-fit: cover;
-  position: relative;
-  z-index: -1;
 }
 
 header img::after {
