@@ -1,18 +1,12 @@
 # CheeseCraft
-#### Video Demo: *TODO*
+#### Video Demo: https://youtu.be/0rp0aNB6qoo
 #### Description:
 
 CheeseCraft is a Minecraft server aimed toward resource gathering and building. This website, written using HTML, CSS, and JavaScript with [Eleventy](https://www.11ty.dev/) and [Cloudflare Pages](https://pages.cloudflare.com/), introduces new players to my server and provides a review of previous game seasons. The project also consists of a Linux server hosted on a repurposed laptop and written in [Nix](https://nixos.org/) that hosts the Minecraft worlds securely.
 
-The following is a summary of the project and a description of its design process.
-
-## Motivation
-
-*TODO*
-
 ## Goals
 
-### Minecraft Server
+### Minecraft Server Host
 
 - The Minecraft server should be able to handle at least 5 concurrent players using high render distance settings.
 - The server should be able to handle more resource-intensive builds well (like mob farms, complex redstone circuits, etc).
