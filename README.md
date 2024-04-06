@@ -1,5 +1,5 @@
 # CheeseCraft
-#### Video Demo: https://youtu.be/0rp0aNB6qoo
+#### Video Demo: https://youtu.be/5PSnkwd3haw
 #### Description:
 
 CheeseCraft is a Minecraft server aimed toward resource gathering and building. This website, written using HTML, CSS, and JavaScript with [Eleventy](https://www.11ty.dev/) and [Cloudflare Pages](https://pages.cloudflare.com/), introduces new players to my server and provides a review of previous game seasons. The project also consists of a Linux server hosted on a repurposed laptop and written in [Nix](https://nixos.org/) that hosts the Minecraft worlds securely.
