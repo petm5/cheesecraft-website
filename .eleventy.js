@@ -22,7 +22,7 @@ function generateImage (imgSrc, imgAlt = "", imgTitle = "") {
   }
 
   const imgOpts = {
-    widths: [144, 240, 460, 580, 768, "auto"],
+    widths: [144, 240, 460, 580, 768],
     formats: ['avif', 'jpeg'],
     urlPath: '/assets/img/',
     outputDir: './_site/assets/img/'
@@ -39,6 +39,32 @@ function generateImage (imgSrc, imgAlt = "", imgTitle = "") {
   return generated
 }
 
+function generateLargeImage (imgSrc, imgAlt = "", imgTitle = "") {
+  const htmlOpts = {
+    title: imgTitle,
+    alt: imgAlt,
+    loading: 'eager',
+    decoding: 'sync'
+  }
+
+  const imgOpts = {
+    widths: [240, 460, 768, "auto"],
+    formats: ['avif', 'jpeg'],
+    urlPath: '/assets/img/',
+    outputDir: './_site/assets/img/'
+  }
+
+  Image(imgSrc, imgOpts)
+  const metadata = Image.statsSync(imgSrc, imgOpts)
+
+  const generated = Image.generateHTML(metadata, {
+    sizes: '100vw',
+    ...htmlOpts
+  })
+
+  return generated
+}
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary('md', markdown)
   eleventyConfig.addPassthroughCopy("main.css")
@@ -49,6 +75,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("sw.js")
   eleventyConfig.addPassthroughCopy("fonts")
   eleventyConfig.addNunjucksShortcode('image', generateImage)
+  eleventyConfig.addNunjucksShortcode('largeImage', generateLargeImage)
   eleventyConfig.addPairedShortcode('grid', (children) => {
     return `
       <div class="grid">
